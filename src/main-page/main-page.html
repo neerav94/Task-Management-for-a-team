@@ -1,0 +1,53 @@
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="./task-management/task-management.html">
+<dom-module id="main-page">
+  <link rel="import" type="css" href="./main-page.css">
+  <template>
+    <iron-ajax url="../json-files/taskManagement.json" auto on-response="responseCallback"></iron-ajax>
+    <paper-card id="header">
+      <div id="headerText">Task Management</div>
+    </paper-card>
+    <div>
+      <template is="dom-repeat" items="{{responseData}}">
+        <task-management metadata="{{item}}"></task-management>
+      </template>
+      <paper-card class="create-project" on-click="createTask">
+        <iron-icon id="create-project-icon" class="innerItem" icon="icons:add-circle-outline"></iron-icon>
+        <div id="create-project-content" class="innerItem">Create New Project</div>
+      </paper-card>
+      <paper-dialog id="dropdownDialog" style="width:30vw;overflow-y: auto;">
+        <h2>Create project</h2>
+        <paper-input always-float-label placeholder="Task Title..." label="Title"></paper-input>
+        <paper-textarea always-float-label placeholder="Start typing..." rows="3" label="Description"></paper-textarea>
+        <paper-dropdown-menu-light label="Members" style="width:26.5vw;">
+          <paper-listbox class="dropdown-content" slot="dropdown-content" style="width:10vw;">
+            <paper-item>1</paper-item>
+            <paper-item>2</paper-item>
+            <paper-item>3</paper-item>
+            <paper-item>4</paper-item>
+            <paper-item>5</paper-item>
+            <paper-item>6</paper-item>
+            <paper-item>7</paper-item>
+            <paper-item>8</paper-item>
+            <paper-item>9</paper-item>
+            <paper-item>10</paper-item>
+            <paper-item>11</paper-item>
+            <paper-item>12</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu-light>
+        <div class="buttons">
+          <div id="cancel">
+            <paper-button dialog-dismiss on-click="buttonClicked">Cancel</paper-button>
+          </div>
+          <div id="create">
+            <paper-button dialog-confirm autofocus toggles raised class="green" on-click="createProject">Create</paper-button>
+          </div>
+        </div>
+      </paper-dialog>
+      <div style="height:10vh; width:100vw; background-color: white;"></div>
+    </div>
+  </template>
+  <script src="./main-page.js">
+  </script>
+</dom-module>

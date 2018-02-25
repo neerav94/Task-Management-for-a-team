@@ -1,0 +1,41 @@
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="./create-project/create-project.html">
+<dom-module id="project-page">
+  <link rel="import" type="css" href="./project-page.css">
+  <template>
+    <iron-ajax url="../json-files/tasks.json" auto on-response="responseCallback"></iron-ajax>
+    <paper-card id="header">
+      <div id="headerText">
+        Publishing
+      </div>
+      <div id="headerIcon">
+        <iron-icon id="closeButton" icon="icons:close" on-click="closeButton" style=""></iron-icon>
+      </div>
+    </paper-card>
+    <div id="main" style="display: inline-flex;">
+      <template is="dom-repeat" items="{{responseData}}">
+        <div style="display: inline-block;vertical-align:top">
+          <create-project data="{{item}}"></create-project>
+        </div>
+      </template>
+      <div class="borderLeft"></div>
+      <div class="addMember" on-click="addMember">Add New Member</div>
+      <div style="height:10vh; width:3vw; background-color: white;"></div>
+    </div>
+    <paper-dialog id="memberDialog" style="width:30vw;overflow-y: auto;">
+      <h2>Add Member</h2>
+      <paper-input always-float-label placeholder="Enter member's name..." label="Name"></paper-input>
+      <div class="buttons">
+        <div class="cancelButton">
+          <paper-button dialog-dismiss on-click="cancelled">Cancel</paper-button>
+        </div>
+        <div class="createButton" on-click="createMember">
+          <paper-button dialog-confirm autofocus toggles raised class="green">Create</paper-button>
+        </div>
+      </div>
+    </paper-dialog>
+  </template>
+  <script src="./project-page.js">
+  </script>
+</dom-module>

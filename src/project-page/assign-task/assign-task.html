@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="./assign-task.css">
+<dom-module id="assign-task">
+  <link rel="import" type="css" href="./assign-task.css">
+  <template>
+    <div class="display-task">
+      <div id="line" class="lineColorDone"></div>
+      <div class="container">
+        <div style="display: inline-block;">{{task.title}}</div>
+        <div style="display: inline-block; margin-left: 0.5vw;">
+          <select style="border-radius: 3vh;color: white; border:none" class="lineColorDone" on-change="changeFunc" id="dropdown">
+            <option value="Done">Done</option>
+            <option value="On Hold">On Hold</option>
+            <option value="In Process">In Process</option>
+            <option value="Sent">Sent</option>
+            <option value="Schedule">Schedule</option>
+          </select>
+        </div>
+        <div style="font-size:2vh;">{{task.description}}</div>
+      </div>
+    </div>
+  </template>
+  <script src="./assign-task.js">
+    
+  </script>
+</dom-module>

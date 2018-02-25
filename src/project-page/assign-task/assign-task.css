@@ -1,0 +1,51 @@
+#line {
+  display: inline-block;
+  width: 0.2vw;
+  z-index: 1;
+  height: 13vh;
+}
+
+.lineColorDone {
+  background-color: #00bfa5;
+}
+
+.display-card {
+  width: 45vh;
+  height: 13vh;
+  margin-left: 2vw;
+  margin-top: 6vh;
+  text-align: center;
+}
+
+#title {
+  font-size: 4vh;
+  padding-top: 3.5vh;
+  color: #616161;
+}
+
+.display-task {
+  width: 45vh;
+  height: 13vh;
+  margin-left: 1vw;
+  margin-top: 6vh;
+  text-align: left;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 1vw;
+  margin-top: 2.5vh;
+  font-size: 2.5vh;
+  font-weight: bold;
+  color: #616161;
+}
+
+select option {
+  background-color: white;
+  color: #616161;
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  width: 10vw;
+}

@@ -1,0 +1,34 @@
+[{
+  "name" : "Abhinav Singhi",
+  "id" : "member1",
+  "tasks" : [{
+    "title" : "Publishing View",
+    "status" : "Done",
+    "index": 0,
+    "id": 0,
+    "description" : "Include all channels preview."
+  }]
+},
+{
+  "name" : "Surbhi Gupta",
+  "id" : "member2",
+  "tasks" : [{
+    "title" : "Icon Creation",
+    "status" : "On Hold",
+    "index": 1,
+    "id": 1,
+    "description" : "Needed a new Icon set."
+  },
+  {
+    "title" : "Publishing View",
+    "status" : "Done",
+    "index": 0,
+    "id": 2,
+    "description" : "Include all channels preview."
+  }]
+},
+{
+  "name" : "Pratibha Joshi",
+  "id" : "member3",
+  "tasks" : []
+}]

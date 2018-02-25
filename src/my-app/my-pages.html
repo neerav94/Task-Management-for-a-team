@@ -1,0 +1,27 @@
+<link rel="import" href="../../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../../bower_components/app-route/app-route.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../project-page/project-page.html">
+<link rel="import" href="../main-page/main-page.html">
+<dom-module id="my-pages">
+  <template>
+    <app-location route="{{route}}" use-hash-as-path></app-location>
+    <app-route route="{{route}}" data="{{pageData}}" pattern="/task" active="{{taskActive}}"></app-route>
+    <app-route route="{{route}}" data="{{pageData}}" pattern="/project" active="{{projectActive}}"></app-route>
+    <!-- since /task is selected as the default path main-page will be displayed first -->
+    <iron-pages selected="{{route.path}}" attr-for-selected="page-name">
+      <main-page page-name="/task" active="{{taskActive}}"></main-page>
+      <project-page page-name="/project" active="{{projectActive}}"></project-page>
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'my-pages',
+      properties: {
+        route: {
+          type: Object
+        }
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,86 @@
+.column {
+    border: 1px dotted #0d47a1;
+    margin: 5px;
+    display: block;
+    padding: 15px;
+    background-color: #ffcc80;
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+.display-card {
+    width: 45vh;
+    height: 25vh;
+    margin-left: 8vw;
+    margin-top: 10vh;
+    vertical-align: top;
+}
+
+.create-project {
+    width: 45vh;
+    height: 25vh;
+    margin-left: 8.5vw;
+    position: absolute;
+    top: 95vh;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+#title {
+    font-size: 4vh;
+    margin-top: 2vh;
+    margin-left: 3vh;
+    color: #616161;
+}
+
+#content {
+    font-size: 2vh;
+    margin-top: 1vh;
+    margin-left: 3vh;
+    color: #bdbdbd;
+    font-weight: bold;
+}
+
+#members {
+    font-size: 2.5vh;
+    margin-top: 2vh;
+    margin-left: 3vh;
+    color: #616161;
+    font-weight: bold;
+}
+
+#create-project-content {
+    margin-left: 1vw;
+}
+
+#create-project-icon {
+    margin-top: 8vh;
+    margin-left: 0.3vw;
+}
+
+#cancel {
+    width: 6vw;
+    margin-right: 2vw;
+    border-radius: 20px;
+    border: 0.2vh solid #bdbdbd;
+    color: #bdbdbd;
+    text-align: center;
+    font-size: 2.5vh;
+    height: 4vh;
+    padding-top: 1vh;
+}
+
+#create {
+    width: 6vw;
+    margin-right: 2vw;
+    border-radius: 20px;
+    border: 1px solid #00bfa5;
+    color: #ffffff;
+    background-color: #00bfa5;
+    font-size: 2.5vh;
+    text-align: center;
+    height: 4vh;
+    padding-top: 1vh;
+}

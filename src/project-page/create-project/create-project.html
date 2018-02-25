@@ -1,0 +1,46 @@
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../assign-task/assign-task.html">
+<dom-module id="create-project">
+  <link rel="import" type="css" href="./create-project.css">
+  <template>
+    <div id="dropTarget" on-drop="drop" on-dragover="allowDrop">
+      <div class="display-card">
+        <div id="title">{{data.name}}</div>
+      </div>
+      <template id="temp" is="dom-repeat" items="{{data.tasks}}">
+        <div on-dragstart="dragStart" draggable="true" id="dragtarget">
+          <assign-task task="{{item}}"></assign-task>
+        </div>
+      </template>
+      <div id="{{data.id}}" class="create-task" on-click="createTask">
+        <iron-icon class="innerItem" icon="icons:add-circle-outline" style="margin-top: 3vh;"></iron-icon>
+        <div class="innerItem">Create Task</div>
+      </div>
+    </div>
+    <paper-dialog id="dropdownDialog" style="width:30vw;overflow-y: auto;">
+      <h2>Create Task</h2>
+      <paper-input always-float-label placeholder="Task Title..." label="Title"></paper-input>
+      <paper-textarea always-float-label placeholder="Start typing..." rows="3" label="Description"></paper-textarea>
+      <paper-dropdown-menu-light label="Status" style="width:26.5vw;">
+        <paper-listbox class="dropdown-content" slot="dropdown-content" style="width:10vw;">
+          <paper-item>Done</paper-item>
+          <paper-item>On Hold</paper-item>
+          <paper-item>In Process</paper-item>
+          <paper-item>Sent</paper-item>
+          <paper-item>Schedule</paper-item>
+        </paper-listbox>
+      </paper-dropdown-menu-light>
+      <div class="buttons">
+        <div class="cancelButton">
+          <paper-button dialog-dismiss on-click="cancelled">Cancel</paper-button>
+        </div>
+        <div class="createButton" on-click="render">
+          <paper-button dialog-confirm autofocus toggles raised class="green">Create</paper-button>
+        </div>
+      </div>
+    </paper-dialog>
+  </template>
+  <script src="./create-project.js">
+    
+  </script>
+</dom-module>

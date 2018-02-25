@@ -1,0 +1,26 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/app-route/app-location.html">
+<link rel="import" href="../../../bower_components/app-route/app-route.html">
+<link rel="import" href="./my-pages.html">
+<dom-module id="my-app">
+  <template>
+    <app-location route="{{route}}" use-hash-as-path></app-location>
+    <app-route route="{{route}}" pattern=":/page" data="{{pageData}}" tail="{{pageTail}}" active="{{pageActive}}"></app-route>
+    <main>
+      <my-pages page="{{pageData.page}}" route="{{pageTail}}"></my-pages>
+    </main>
+  </template>
+  <script>
+    Polymer({
+      is: 'my-app',
+
+      //called as soon as the element is attached to the document
+      //setting the default path as /task
+      attached: function() {
+        if(!this.route.path) {
+          this.set('route.path','/task')
+        }
+      }
+    });
+  </script>
+</dom-module>
